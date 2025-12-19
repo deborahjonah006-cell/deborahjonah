@@ -1,87 +1,145 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #FFFFFF;
-    color: #000000;
-    margin: 0;
-    padding: 0;
+/* --- Root Variables for Easy Color Changes --- */
+:root {
+    --primary-pink: #ff4d8d;      /* Main Pink */
+    --dark-pink: #e03a7a;         /* Hover/Border Pink */
+    --light-bg: #fff5f7;          /* Soft Pink Background */
+    --white: #ffffff;
+    --dark-text: #333333;
+    --footer-bg: #222222;
 }
 
+/* --- General Reset --- */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* --- Header Section --- */
 header {
-    background-color: #0D47A1;
-    color: #FFFFFF;
-    padding: 3rem 1rem;
+    background-color: var(--primary-pink);
+    color: var(--white);
+    padding: 4rem 1rem;
     text-align: center;
+    border-bottom: 5px solid var(--dark-pink);
 }
 
 header h1 {
     margin: 0;
-    font-size: 3rem;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 header p {
     margin: 0.5rem 0 0;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
 }
 
+/* --- Navigation --- */
 nav {
-    background-color: #1565C0;
+    background-color: var(--white);
     display: flex;
     justify-content: center;
     padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 nav a {
-    color: white;
-    margin: 0 1rem;
+    color: var(--primary-pink);
+    margin: 0 1.5rem;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
 nav a:hover {
-    color: #BBDEFB;
+    color: var(--dark-text);
 }
 
+/* --- Content Sections --- */
 section {
-    background-color: #FFFFFF;
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: var(--white);
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 77, 141, 0.1);
 }
 
 section h2 {
-    color: #0D47A1;
+    color: var(--primary-pink);
+    border-left: 5px solid var(--primary-pink);
+    padding-left: 15px;
+    margin-bottom: 1.5rem;
 }
 
+/* --- Profile Picture --- */
 .profile-pic {
-    width: 160px;
-    height: 160px;
+    width: 220px;
+    height: 220px;
+    object-fit: cover; /* Ensures the photo doesn't stretch */
     border-radius: 50%;
     display: block;
-    margin: 1rem auto;
+    margin: 0 auto 2rem auto;
+    border: 5px solid var(--primary-pink);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+/* --- Interactive Buttons --- */
+.portfolio-link, .elevator-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-pink);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.portfolio-link:hover, .elevator-link:hover {
+    background-color: var(--dark-text);
+    transform: translateY(-2px);
+}
+
+/* --- Lists (Portfolio Items) --- */
 ul {
-    list-style: none;
+    list-style-type: none;
     padding-left: 0;
 }
 
 ul li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: #fff9fb;
+    border-left: 3px solid var(--primary-pink);
 }
 
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
+/* --- Footer --- */
 footer {
     text-align: center;
-    padding: 1.5rem;
-    background-color: #0D47A1;
-    color: white;
+    padding: 2rem;
+    background-color: var(--footer-bg);
+    color: #ffb1cb;
+    margin-top: 4rem;
+}
+
+/* --- Responsive for Mobile --- */
+@media (max-width: 600px) {
+    header h1 { font-size: 2.5rem; }
+    section { margin: 1rem; padding: 1.5rem; }
+    nav { flex-direction: row; font-size: 0.8rem; }
 }
