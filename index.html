@@ -7,90 +7,104 @@
     <style>
         /* General Styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #FFFFFF;
-            color: #000000;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #fff5f7; /* Very light pink background */
+            color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
         header {
-            background-color: #0D47A1; /* Deep Blue */
+            background-color: #ff4d8d; /* Vibrant Pink */
             color: #FFFFFF;
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
             text-align: center;
+            border-bottom: 5px solid #e03a7a;
         }
 
         header h1 {
             margin: 0;
-            font-size: 3rem;
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         header p {
             margin: 0.5rem 0 0;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
         }
 
         nav {
-            background-color: #1565C0; /* Blue */
+            background-color: #ffffff;
             display: flex;
             justify-content: center;
             padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         nav a {
-            color: white;
-            margin: 0 1rem;
+            color: #ff4d8d;
+            margin: 0 1.5rem;
             text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
         nav a:hover {
-            color: #BBDEFB; /* Light blue on hover */
+            color: #333;
         }
 
         section {
             background-color: #FFFFFF;
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 77, 141, 0.1);
         }
 
         section h2 {
-            color: #0D47A1; /* Deep Blue */
+            color: #ff4d8d;
+            border-left: 5px solid #ff4d8d;
+            padding-left: 15px;
+            margin-bottom: 1.5rem;
         }
 
-        img.profile-pic {
-            width: 160px;
-            height: 160px;
+        /* Profile Image Styling */
+        .profile-pic {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
             border-radius: 50%;
             display: block;
-            margin: 1rem auto;
+            margin: 0 auto 2rem auto;
+            border: 5px solid #ff4d8d;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .portfolio-link, .elevator-link {
             display: inline-block;
             margin-top: 1rem;
-            padding: 0.6rem 1.2rem;
-            background-color: #1565C0; /* Blue */
+            padding: 0.8rem 1.5rem;
+            background-color: #ff4d8d;
             color: white;
             text-decoration: none;
-            border-radius: 6px;
-            transition: 0.3s;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: bold;
         }
 
         .portfolio-link:hover, .elevator-link:hover {
-            background-color: #0D47A1; /* Darker Blue */
-        }
-
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: #0D47A1; /* Deep Blue */
-            color: white;
+            background-color: #333;
+            transform: translateY(-2px);
         }
 
         ul {
@@ -99,61 +113,69 @@
         }
 
         ul li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 10px;
+            background-color: #fff9fb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #333;
+            color: #ffb1cb;
+            margin-top: 4rem;
         }
 
         @media (max-width: 600px) {
-            nav {
-                flex-direction: column;
-            }
-
-            nav a {
-                margin: 0.5rem 0;
-            }
+            header h1 { font-size: 2.5rem; }
+            section { margin: 1rem; padding: 1.5rem; }
+            nav { flex-direction: row; font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <h1>Deborah Jonah</h1>
         <p>Ambassador for a Day 2025 | Aspiring Diplomat | International Relations Enthusiast</p>
     </header>
 
-    <!-- Navigation -->
     <nav>
         <a href="#bio">Bio</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#elevator">Elevator Pitch</a>
     </nav>
 
-    <!-- Bio Section -->
     <section id="bio">
         <h2>About Me</h2>
-        <img src="https://via.placeholder.com/160" alt="Deborah Jonah" class="profile-pic">
-        <p>Hello! I'm Deborah Jonah, an ambitious student passionate about diplomacy and international relations. In 2025, I was honored as <strong>Ambassador for a Day</strong>, which fueled my determination to make a positive impact globally. Overcoming personal challenges has strengthened my commitment to growth, learning, and leadership.</p>
+        <img src="profile.jpeg" alt="Deborah Jonah" class="profile-pic">
+        
+        <p>Hello! I'm <strong>Deborah Jonah</strong>, an ambitious student passionate about diplomacy and international relations. In 2025, I was honored as <strong>Ambassador for a Day</strong>, which fueled my determination to make a positive impact globally. Overcoming personal challenges has strengthened my commitment to growth, learning, and leadership.</p>
         <p>My achievements and experiences have shaped my path toward excellence in academic and professional endeavors. I am excited to showcase my projects and skills through this portfolio website.</p>
     </section>
 
-    <!-- Portfolio Section -->
     <section id="portfolio">
         <h2>Portfolio</h2>
         <p>Highlights from my recent projects:</p>
         <ul>
-            <li>Phase 2 Project Video: <a class="portfolio-link" href="https://youtu.be/HzFaN5uk6Xc" target="_blank">Watch on YouTube</a></li>
-            <li>Phase 2 Project Slide Deck: <a class="portfolio-link" href="https://docs.google.com/presentation/d/1dQE6H5JBd0UhVu73F6uVrEOjGYg1_pVKS4G7rhgN4m4/edit?usp=sharing" target="_blank">Download PDF</a></li>
+            <li>
+                <strong>Phase 2 Project Video</strong><br>
+                <a class="portfolio-link" href="https://youtu.be/HzFaN5uk6Xc" target="_blank">Watch on YouTube</a>
+            </li>
+            <li>
+                <strong>Phase 2 Project Slide Deck</strong><br>
+                <a class="portfolio-link" href="https://docs.google.com/presentation/d/1dQE6H5JBd0UhVu73F6uVrEOjGYg1_pVKS4G7rhgN4m4/edit?usp=sharing" target="_blank">View Presentation</a>
+            </li>
         </ul>
     </section>
 
-    <!-- Elevator Pitch Section -->
     <section id="elevator">
         <h2>Elevator Pitch</h2>
         <p>This is a placeholder for my elevator pitch. I will update this section once I have a video or finalized text ready to share.</p>
         <a class="elevator-link" href="#bio">Back to Bio</a>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Deborah Jonah | All Rights Reserved</p>
     </footer>
