@@ -1,11 +1,11 @@
-/* --- Root Variables for Easy Color Changes --- */
+/* --- Root Variables for Black and White Theme --- */
 :root {
-    --primary-pink: #ff4d8d;      /* Main Pink */
-    --dark-pink: #e03a7a;         /* Hover/Border Pink */
-    --light-bg: #fff5f7;          /* Soft Pink Background */
+    --primary-accent: #000000;    /* Solid Black */
+    --hover-accent: #333333;      /* Dark Grey for hover */
+    --light-bg: #f8f9fa;          /* Very Light Grey background */
     --white: #ffffff;
-    --dark-text: #333333;
-    --footer-bg: #222222;
+    --dark-text: #1a1a1a;
+    --footer-bg: #000000;
 }
 
 /* --- General Reset --- */
@@ -20,11 +20,11 @@ body {
 
 /* --- Header Section --- */
 header {
-    background-color: var(--primary-pink);
+    background-color: var(--primary-accent);
     color: var(--white);
     padding: 4rem 1rem;
     text-align: center;
-    border-bottom: 5px solid var(--dark-pink);
+    border-bottom: 5px solid #333333;
 }
 
 header h1 {
@@ -32,13 +32,14 @@ header h1 {
     font-size: 3.5rem;
     letter-spacing: 2px;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 header p {
     margin: 0.5rem 0 0;
     font-size: 1.2rem;
     font-weight: 300;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 /* --- Navigation --- */
@@ -50,11 +51,11 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav a {
-    color: var(--primary-pink);
+    color: var(--primary-accent);
     margin: 0 1.5rem;
     text-decoration: none;
     font-weight: bold;
@@ -64,7 +65,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--dark-text);
+    color: #666666;
 }
 
 /* --- Content Sections --- */
@@ -73,48 +74,56 @@ section {
     max-width: 800px;
     margin: 3rem auto;
     padding: 3rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(255, 77, 141, 0.1);
+    border-radius: 8px; /* Slightly sharper corners for a formal look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 section h2 {
-    color: var(--primary-pink);
-    border-left: 5px solid var(--primary-pink);
+    color: var(--primary-accent);
+    border-left: 5px solid var(--primary-accent);
     padding-left: 15px;
     margin-bottom: 1.5rem;
+    text-transform: uppercase;
 }
 
 /* --- Profile Picture --- */
 .profile-pic {
     width: 220px;
     height: 220px;
-    object-fit: cover; /* Ensures the photo doesn't stretch */
+    object-fit: cover;
     border-radius: 50%;
     display: block;
     margin: 0 auto 2rem auto;
-    border: 5px solid var(--primary-pink);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 4px solid var(--primary-accent);
+    filter: grayscale(100%); /* Optional: Makes your photo B&W to match */
+    transition: 0.5s;
+}
+
+.profile-pic:hover {
+    filter: grayscale(0%); /* Photo turns to color when hovered */
 }
 
 /* --- Interactive Buttons --- */
 .portfolio-link, .elevator-link {
     display: inline-block;
     margin-top: 1rem;
-    padding: 0.8rem 1.5rem;
-    background-color: var(--primary-pink);
+    padding: 0.8rem 1.8rem;
+    background-color: var(--primary-accent);
     color: white;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 4px;
     transition: all 0.3s ease;
     font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
 }
 
 .portfolio-link:hover, .elevator-link:hover {
-    background-color: var(--dark-text);
+    background-color: #444444;
     transform: translateY(-2px);
 }
 
-/* --- Lists (Portfolio Items) --- */
+/* --- Lists --- */
 ul {
     list-style-type: none;
     padding-left: 0;
@@ -123,23 +132,24 @@ ul {
 ul li {
     margin-bottom: 1.5rem;
     padding: 1.5rem;
-    border-radius: 10px;
-    background-color: #fff9fb;
-    border-left: 3px solid var(--primary-pink);
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
 }
 
 /* --- Footer --- */
 footer {
     text-align: center;
-    padding: 2rem;
+    padding: 2.5rem;
     background-color: var(--footer-bg);
-    color: #ffb1cb;
+    color: var(--white);
     margin-top: 4rem;
+    font-size: 0.9rem;
 }
 
-/* --- Responsive for Mobile --- */
+/* --- Responsive --- */
 @media (max-width: 600px) {
-    header h1 { font-size: 2.5rem; }
+    header h1 { font-size: 2.2rem; }
     section { margin: 1rem; padding: 1.5rem; }
-    nav { flex-direction: row; font-size: 0.8rem; }
 }
+
